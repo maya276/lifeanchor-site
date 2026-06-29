@@ -1,9 +1,7 @@
 import { Logo } from './Logo';
 import { useFadeIn } from './useFadeIn';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import { languages } from './translations';
-
-const EMAIL = 'contact@lifeanchor.ai';
+import { languages, EMAIL } from './translations';
 
 function mailtoLink(subject) {
   return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
@@ -121,14 +119,17 @@ function Hero() {
       style={{ background: '#2D1B69' }}
     >
       <Header />
+      <p className="font-sans max-w-xl text-[15px] italic" style={{ color: '#C9C5DC' }}>
+        {t.hero.eyebrow}
+      </p>
       <h1
-        className="font-serif text-white max-w-3xl"
-        style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)', lineHeight: 1.2, fontWeight: 500 }}
+        className="font-serif text-white max-w-3xl mt-4"
+        style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)', lineHeight: 1.1, fontWeight: 500 }}
       >
         {t.hero.headline}
       </h1>
       <p className="font-sans max-w-xl mt-8 text-[17px]" style={{ color: '#C9C5DC', lineHeight: 1.6 }}>
-        {t.hero.sub}
+        {t.hero.body}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 mt-10">
         <PrimaryButton href="#partners">{t.hero.ctaPartnership}</PrimaryButton>
@@ -138,16 +139,17 @@ function Hero() {
   );
 }
 
-function StatCard({ stat, label }) {
+function CitationItem({ text, source }) {
   return (
-    <div className="flex-1 p-7" style={{ background: '#F8F7F5' }}>
-      <p className="font-serif text-[2rem]" style={{ color: '#2D1B69' }}>
-        {stat}
+    <li className="flex gap-3">
+      <span style={{ color: '#5EB8A0' }} className="font-serif text-[1.1rem] leading-none mt-0.5">
+        —
+      </span>
+      <p className="font-sans text-[16px]" style={{ lineHeight: 1.6, color: '#1A1A2E' }}>
+        {text}{' '}
+        <span className="text-[13px]" style={{ color: '#6B6B8A' }}>({source})</span>
       </p>
-      <p className="font-sans text-[14px] mt-2" style={{ color: '#1A1A2E' }}>
-        {label}
-      </p>
-    </div>
+    </li>
   );
 }
 
@@ -163,57 +165,55 @@ function Problem() {
         >
           {t.problem.headline}
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 mt-10 max-w-3xl">
-          <p className="font-sans text-[16px]" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
-            {t.problem.p1}
-          </p>
-          <p className="font-sans text-[16px]" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
-            {t.problem.p2}
-          </p>
-        </div>
-      </Fade>
-      <Fade className="flex flex-col md:flex-row gap-4 mt-12">
-        <StatCard stat="2.14%" label={t.problem.stat1} />
-        <StatCard stat="90 days" label={t.problem.stat2} />
-        <StatCard stat="6 instruments" label={t.problem.stat3} />
+        <ul className="space-y-5 mt-10 max-w-3xl">
+          {t.problem.items.map((item) => (
+            <CitationItem key={item.source} text={item.text} source={item.source} />
+          ))}
+        </ul>
+        <p className="font-sans text-[16px] mt-8 max-w-3xl" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
+          {t.problem.closing}
+        </p>
       </Fade>
     </section>
   );
 }
 
-function ListItem({ children }) {
-  return (
-    <li className="flex gap-3 font-sans text-[15px]" style={{ color: '#1A1A2E', lineHeight: 1.6 }}>
-      <span style={{ color: '#2D1B69' }}>✦</span>
-      <span>{children}</span>
-    </li>
-  );
-}
-
-function WhatWeBuild() {
+function WhatWeDo() {
   const { t } = useLanguage();
   return (
     <section id="research" className="px-6 py-16 md:py-24" style={{ background: '#F8F7F5' }}>
       <Fade className="max-w-[1160px] mx-auto">
-        <Eyebrow>{t.build.eyebrow}</Eyebrow>
+        <Eyebrow>{t.whatWeDo.eyebrow}</Eyebrow>
         <h2
           className="font-serif max-w-2xl"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, fontWeight: 500, color: '#1A1A2E' }}
         >
-          {t.build.headline}
+          {t.whatWeDo.headline}
         </h2>
-        <div className="grid md:grid-cols-2 gap-12 mt-10">
-          <div className="font-sans text-[16px] space-y-5" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
-            <p>{t.build.p1}</p>
-            <p>{t.build.p2}</p>
+        <p className="font-sans text-[16px] mt-6 max-w-3xl" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
+          {t.whatWeDo.intro}
+        </p>
+        <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-3xl">
+          <div>
+            <p className="font-sans text-[15px] font-semibold mb-2" style={{ color: '#2D1B69' }}>
+              {t.whatWeDo.point1Label}
+            </p>
+            <p className="font-sans text-[16px]" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
+              {t.whatWeDo.point1}
+            </p>
           </div>
-          <ul className="space-y-5">
-            <ListItem>{t.build.list1}</ListItem>
-            <ListItem>{t.build.list2}</ListItem>
-            <ListItem>{t.build.list3}</ListItem>
-            <ListItem>{t.build.list4}</ListItem>
-          </ul>
+          <div>
+            <p className="font-sans text-[15px] font-semibold mb-2" style={{ color: '#2D1B69' }}>
+              {t.whatWeDo.point2Label}
+            </p>
+            <p className="font-sans text-[16px]" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
+              {t.whatWeDo.point2}
+            </p>
+          </div>
         </div>
+        <p className="font-sans text-[16px] mt-8 max-w-3xl" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
+          {t.whatWeDo.closing}
+        </p>
       </Fade>
     </section>
   );
@@ -248,110 +248,24 @@ function FoundingStory() {
   );
 }
 
-function PersonCard({ name, title }) {
-  return (
-    <div className="py-4" style={{ borderTop: '1px solid #E8E6F0' }}>
-      <p className="font-sans text-[15px] font-semibold" style={{ color: '#1A1A2E' }}>
-        {name}
-      </p>
-      <p className="font-sans text-[14px] mt-1" style={{ color: '#6B6B8A' }}>
-        {title}
-      </p>
-    </div>
-  );
-}
-
-function NetworkColumn({ title, people }) {
-  return (
-    <div>
-      <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-2" style={{ color: '#6B6B8A' }}>
-        {title}
-      </p>
-      {people.map((p) => (
-        <PersonCard key={p.name} name={p.name} title={p.title} />
-      ))}
-    </div>
-  );
-}
-
-function Network() {
+function ForResearchers() {
   const { t } = useLanguage();
   return (
     <section id="partners" className="px-6 py-16 md:py-24" style={{ background: '#F8F7F5' }}>
       <Fade className="max-w-[1160px] mx-auto">
-        <Eyebrow>{t.network.eyebrow}</Eyebrow>
+        <Eyebrow>{t.researchers.eyebrow}</Eyebrow>
         <h2
           className="font-serif max-w-2xl"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, fontWeight: 500, color: '#1A1A2E' }}
         >
-          {t.network.headline}
+          {t.researchers.headline}
         </h2>
-        <p className="font-sans text-[15px] mt-6" style={{ color: '#6B6B8A' }}>
-          {t.network.intro}
+        <p className="font-sans text-[16px] mt-6 max-w-2xl" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
+          {t.researchers.body}
         </p>
-        <div className="grid md:grid-cols-3 gap-10 mt-8">
-          <NetworkColumn
-            title={t.network.col1}
-            people={[
-              { name: 'Prof. Dr. Dirk Jäger', title: t.network.t1 },
-              { name: 'Dr. Anna Erat', title: t.network.t2 },
-              { name: 'Dr. Hans Rudolf Keller', title: t.network.t3 },
-            ]}
-          />
-          <NetworkColumn
-            title={t.network.col2}
-            people={[{ name: 'Dr. Mohammad El Hachimi', title: t.network.t4 }]}
-          />
-          <NetworkColumn
-            title={t.network.col3}
-            people={[
-              { name: 'Dr. Linda Ahnen', title: t.network.t5 },
-              { name: 'Swiss Verein structure', title: t.network.t6 },
-              { name: 'BASEC IRB submission', title: t.network.t7 },
-            ]}
-          />
-        </div>
-        <p className="font-sans text-[13px] mt-10" style={{ color: '#6B6B8A' }}>
-          {t.network.footnote}
-        </p>
-      </Fade>
-    </section>
-  );
-}
-
-function PartnerCard({ label, children }) {
-  return (
-    <div className="flex-1 p-7" style={{ border: '2px solid #E8E6F0' }}>
-      <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-3" style={{ color: '#2D1B69' }}>
-        {label}
-      </p>
-      <p className="font-sans text-[15px]" style={{ lineHeight: 1.7, color: '#1A1A2E' }}>
-        {children}
-      </p>
-    </div>
-  );
-}
-
-function ResearchPartnership() {
-  const { t } = useLanguage();
-  return (
-    <section className="px-6 py-16 md:py-24 max-w-[1160px] mx-auto">
-      <Fade>
-        <Eyebrow>{t.partnership.eyebrow}</Eyebrow>
-        <h2
-          className="font-serif max-w-2xl"
-          style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, fontWeight: 500, color: '#1A1A2E' }}
-        >
-          {t.partnership.headline}
-        </h2>
-        <div className="flex flex-col md:flex-row gap-6 mt-10">
-          <PartnerCard label={t.partnership.card1Label}>{t.partnership.card1}</PartnerCard>
-          <PartnerCard label={t.partnership.card2Label}>{t.partnership.card2}</PartnerCard>
-          <PartnerCard label={t.partnership.card3Label}>{t.partnership.card3}</PartnerCard>
-        </div>
-        <div className="mt-10">
+        <div className="mt-8">
           <PrimaryButton href={mailtoLink('Research Partnership Inquiry')}>
-            {t.partnership.cta}
+            {t.researchers.cta}
           </PrimaryButton>
         </div>
       </Fade>
@@ -364,16 +278,16 @@ function Support() {
   return (
     <section id="support" className="px-6 py-16 md:py-24" style={{ background: '#2D1B69' }}>
       <Fade className="max-w-[1160px] mx-auto">
+        <Eyebrow>{t.support.eyebrow}</Eyebrow>
         <h2
           className="font-serif text-white max-w-xl"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, fontWeight: 500 }}
         >
           {t.support.headline}
         </h2>
-        <div className="font-sans text-[16px] max-w-xl mt-8 space-y-5" style={{ color: '#C9C5DC', lineHeight: 1.7 }}>
-          <p>{t.support.p1}</p>
-          <p>{t.support.p2}</p>
-        </div>
+        <p className="font-sans text-[16px] max-w-xl mt-6" style={{ color: '#C9C5DC', lineHeight: 1.7 }}>
+          {t.support.body}
+        </p>
         <div className="mt-10">
           <p className="font-sans text-[14px] mb-4" style={{ color: '#C9C5DC' }}>
             {t.support.donateNote}
@@ -383,6 +297,57 @@ function Support() {
             <OutlineButton href={mailtoLink('Grant & Partnership Enquiry')} light>
               {t.support.ctaGrant}
             </OutlineButton>
+          </div>
+        </div>
+      </Fade>
+    </section>
+  );
+}
+
+function GovernancePerson({ name, title }) {
+  return (
+    <div className="py-4" style={{ borderTop: '1px solid #E8E6F0' }}>
+      <p className="font-sans text-[15px] font-semibold" style={{ color: '#1A1A2E' }}>
+        {name}
+      </p>
+      <p className="font-sans text-[14px] mt-1" style={{ color: '#6B6B8A' }}>
+        {title}
+      </p>
+    </div>
+  );
+}
+
+function Governance() {
+  const { t } = useLanguage();
+  return (
+    <section className="px-6 py-16 md:py-24 max-w-[1160px] mx-auto">
+      <Fade>
+        <Eyebrow>{t.governance.eyebrow}</Eyebrow>
+        <h2
+          className="font-serif max-w-2xl"
+          style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', lineHeight: 1.2, fontWeight: 500, color: '#1A1A2E' }}
+        >
+          {t.governance.headline}
+        </h2>
+        <div className="grid md:grid-cols-2 gap-10 mt-10">
+          <div>
+            <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-2" style={{ color: '#6B6B8A' }}>
+              {t.governance.boardLabel}
+            </p>
+            {t.governance.board.map((p) => (
+              <GovernancePerson key={p.name} name={p.name} title={p.title} />
+            ))}
+            <p className="font-sans text-[13px] mt-4" style={{ color: '#6B6B8A' }}>
+              {t.governance.boardNote}
+            </p>
+          </div>
+          <div>
+            <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-2" style={{ color: '#6B6B8A' }}>
+              {t.governance.advisorsLabel}
+            </p>
+            {t.governance.advisors.map((p) => (
+              <GovernancePerson key={p.name} name={p.name} title={p.title} />
+            ))}
           </div>
         </div>
       </Fade>
@@ -402,6 +367,9 @@ function Footer() {
           </p>
           <p className="font-sans text-[13px] mt-1" style={{ color: '#9B9AB0' }}>
             {EMAIL}
+          </p>
+          <p className="font-sans text-[13px] mt-3" style={{ color: '#9B9AB0' }}>
+            {t.footer.independent}
           </p>
         </div>
         <div className="flex flex-col items-start md:items-end gap-4">
@@ -429,11 +397,11 @@ function Page() {
     <div className="font-sans" style={{ color: '#1A1A2E' }}>
       <Hero />
       <Problem />
-      <WhatWeBuild />
+      <WhatWeDo />
       <FoundingStory />
-      <Network />
-      <ResearchPartnership />
+      <ForResearchers />
       <Support />
+      <Governance />
       <Footer />
     </div>
   );

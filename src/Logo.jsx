@@ -14,7 +14,7 @@ export function Logo({ light = false }) {
         className="font-sans font-semibold tracking-tight"
         style={{ color, fontSize: '16px' }}
       >
-        LifeAnchor.ai
+        LifeAnchor
       </span>
     </div>
   );
