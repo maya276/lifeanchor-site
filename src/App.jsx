@@ -337,9 +337,6 @@ function Governance() {
             {t.governance.board.map((p) => (
               <GovernancePerson key={p.name} name={p.name} title={p.title} />
             ))}
-            <p className="font-sans text-[13px] mt-4" style={{ color: '#6B6B8A' }}>
-              {t.governance.boardNote}
-            </p>
           </div>
           <div>
             <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-2" style={{ color: '#6B6B8A' }}>
