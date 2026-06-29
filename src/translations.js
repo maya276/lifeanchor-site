@@ -45,7 +45,7 @@ const en = {
     eyebrow: 'WHY WE EXIST',
     headline: 'Built by a cancer survivor.',
     body: 'Dov Bar-Gera, co-founder and chairman of LifeAnchor, experienced firsthand what no dataset captures: the psychological void of a cancer diagnosis, and the absence of any structured support in the weeks that follow. LifeAnchor began as his answer to that void — and has grown into a research infrastructure project with clinical advisors, academic partners, and regulatory grounding across Switzerland and Europe.',
-    quote: 'There is no tool that measures what cancer does to a person psychologically — across time, across treatment, at scale. That is what we are building.',
+    quote: 'There is no tool that measures what cancer does to a person emotionally — across time, across treatment, at scale. That is what we are building.',
     quoteAttr: '— Dov Bar-Gera, Co-Founder & Chairman',
   },
   researchers: {
@@ -136,7 +136,7 @@ const de = {
     eyebrow: 'WARUM ES UNS GIBT',
     headline: 'Gegründet von einem Krebsüberlebenden.',
     body: 'Dov Bar-Gera, Mitgründer und Präsident von LifeAnchor, erlebte selbst, was kein Datensatz erfasst: die psychologische Leere einer Krebsdiagnose und das Fehlen jeder strukturierten Unterstützung in den darauffolgenden Wochen. LifeAnchor begann als seine Antwort auf diese Leere — und ist zu einem Forschungsinfrastrukturprojekt mit klinischen Beraterinnen und Beratern, akademischen Partnern und regulatorischer Verankerung in der Schweiz und Europa gewachsen.',
-    quote: 'Es gibt kein Instrument, das misst, was Krebs mit einem Menschen psychologisch macht — über die Zeit, über die Behandlung hinweg, im grossen Massstab. Das ist es, was wir aufbauen.',
+    quote: 'Es gibt kein Instrument, das misst, was Krebs mit einem Menschen emotional macht — über die Zeit, über die Behandlung hinweg, im grossen Massstab. Das ist es, was wir aufbauen.',
     quoteAttr: '— Dov Bar-Gera, Mitgründer und Präsident',
   },
   researchers: {
@@ -227,7 +227,7 @@ const fr = {
     eyebrow: 'POURQUOI NOUS EXISTONS',
     headline: 'Fondé par un survivant du cancer.',
     body: "Dov Bar-Gera, cofondateur et président de LifeAnchor, a vécu personnellement ce qu'aucune donnée ne capture : le vide psychologique d'un diagnostic de cancer, et l'absence de tout soutien structuré dans les semaines qui suivent. LifeAnchor est né de sa réponse à ce vide — et s'est développé en un projet d'infrastructure de recherche avec des conseillers cliniques, des partenaires académiques et un ancrage réglementaire en Suisse et en Europe.",
-    quote: "Il n'existe aucun outil qui mesure ce que le cancer fait à une personne psychologiquement — dans le temps, à travers le traitement, à grande échelle. C'est ce que nous construisons.",
+    quote: "Il n'existe aucun outil qui mesure ce que le cancer fait à une personne émotionnellement — dans le temps, à travers le traitement, à grande échelle. C'est ce que nous construisons.",
     quoteAttr: '— Dov Bar-Gera, cofondateur et président',
   },
   researchers: {
