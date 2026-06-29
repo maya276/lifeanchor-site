@@ -51,7 +51,7 @@ const en = {
   researchers: {
     eyebrow: 'FOR RESEARCHERS AND INSTITUTIONS',
     headline: 'Partnerships that publish openly.',
-    body: "We partner with researchers studying psycho-oncology, where results will be published openly. If you're a clinician-researcher or institution working on emotional and psychosocial outcomes in cancer care — particularly in Switzerland — we'd like to hear from you.",
+    body: "We partner with researchers studying psycho-oncology, where results will be published openly. If you're a clinician-researcher or institution working on emotional, psychological, and psychosocial outcomes in cancer care — particularly in Switzerland — we'd like to hear from you.",
     cta: 'Discuss a Research Partnership',
   },
   support: {
@@ -142,7 +142,7 @@ const de = {
   researchers: {
     eyebrow: 'FÜR FORSCHENDE UND INSTITUTIONEN',
     headline: 'Partnerschaften, die offen publizieren.',
-    body: 'Wir arbeiten mit Forschenden zusammen, die sich mit Psychoonkologie befassen und deren Ergebnisse offen publiziert werden. Wenn Sie als Klinikerin, Kliniker oder Institution an emotionalen und psychosozialen Outcomes in der Krebsversorgung arbeiten — insbesondere in der Schweiz — würden wir uns über eine Kontaktaufnahme freuen.',
+    body: 'Wir arbeiten mit Forschenden zusammen, die sich mit Psychoonkologie befassen und deren Ergebnisse offen publiziert werden. Wenn Sie als Klinikerin, Kliniker oder Institution an emotionalen, psychologischen und psychosozialen Outcomes in der Krebsversorgung arbeiten — insbesondere in der Schweiz — würden wir uns über eine Kontaktaufnahme freuen.',
     cta: 'Forschungspartnerschaft besprechen',
   },
   support: {
@@ -233,7 +233,7 @@ const fr = {
   researchers: {
     eyebrow: 'POUR LES CHERCHEURS ET LES INSTITUTIONS',
     headline: 'Des partenariats qui publient ouvertement.',
-    body: "Nous collaborons avec des chercheurs travaillant sur la psycho-oncologie, dont les résultats seront publiés ouvertement. Si vous êtes clinicien-chercheur ou une institution travaillant sur les résultats émotionnels et psychosociaux dans les soins du cancer — particulièrement en Suisse — nous serions heureux d'échanger avec vous.",
+    body: "Nous collaborons avec des chercheurs travaillant sur la psycho-oncologie, dont les résultats seront publiés ouvertement. Si vous êtes clinicien-chercheur ou une institution travaillant sur les résultats émotionnels, psychologiques et psychosociaux dans les soins du cancer — particulièrement en Suisse — nous serions heureux d'échanger avec vous.",
     cta: 'Discuter d\'un partenariat de recherche',
   },
   support: {
