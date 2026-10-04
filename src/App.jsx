@@ -329,23 +329,13 @@ function Governance() {
         >
           {t.governance.headline}
         </h2>
-        <div className="grid md:grid-cols-2 gap-10 mt-10">
-          <div>
-            <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-2" style={{ color: '#6B6B8A' }}>
-              {t.governance.boardLabel}
-            </p>
-            {t.governance.board.map((p) => (
-              <GovernancePerson key={p.name} name={p.name} title={p.title} />
-            ))}
-          </div>
-          <div>
-            <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-2" style={{ color: '#6B6B8A' }}>
-              {t.governance.advisorsLabel}
-            </p>
-            {t.governance.advisors.map((p) => (
-              <GovernancePerson key={p.name} name={p.name} title={p.title} />
-            ))}
-          </div>
+        <div className="mt-10 max-w-lg">
+          <p className="font-sans text-[12px] uppercase tracking-[0.1em] font-semibold mb-2" style={{ color: '#6B6B8A' }}>
+            {t.governance.boardLabel}
+          </p>
+          {t.governance.board.map((p) => (
+            <GovernancePerson key={p.name} name={p.name} title={p.title} />
+          ))}
         </div>
       </Fade>
     </section>
